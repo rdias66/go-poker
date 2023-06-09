@@ -1,5 +1,12 @@
 package deck
 
+
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
 func SuitBuilder(suitName string) suit {
 	newSuit := suit{}
 	for i := 1; i <= 13; i++ {
@@ -41,4 +48,13 @@ func (deck deck) DeckPrinter() {
 	for _, d := range deck {
 		fmt.Println(d)
 	}
+}
+
+func (d deck) shuffle() deck {
+	rand.Seed(time.Now().UnixNano())
+	for i := len(d) - 1; i > 0; i-- {
+		j := rand.Intn(i + 1)
+		d[i], d[j] = d[j], d[i]
+	}
+	return d
 }
