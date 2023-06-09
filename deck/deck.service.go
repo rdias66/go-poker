@@ -44,13 +44,13 @@ func DeckBuilder(suits []suit) deck {
 	return newDeck
 }
 
-func (deck deck) DeckPrinter() {
+func (deck deck) Printer() {
 	for _, d := range deck {
 		fmt.Println(d)
 	}
 }
 
-func (d deck) shuffle() deck {
+func (d deck) Shuffle() deck {
 	rand.Seed(time.Now().UnixNano())
 	for i := len(d) - 1; i > 0; i-- {
 		j := rand.Intn(i + 1)
