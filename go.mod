@@ -1,3 +1,3 @@
-module github.com/rdias66/go-poker
+module go-poker
 
 go 1.18

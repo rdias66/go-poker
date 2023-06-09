@@ -1,41 +1,40 @@
 package deck
 
-
 import (
 	"fmt"
 	"math/rand"
 	"time"
 )
 
-func SuitBuilder(suitName string) suit {
-	newSuit := suit{}
+func SuitBuilder(suitName string) Suit {
+	newSuit := Suit{}
 	for i := 1; i <= 13; i++ {
 		if i == 1 {
-			var newCard card = NewCard("Ace of ", suitName)
+			var newCard Card = NewCard("Ace of ", suitName)
 			newSuit = append(newSuit, newCard)
 		} else if i == 11 {
-			var newCard card = NewCard("Jack of ", suitName)
+			var newCard Card = NewCard("Jack of ", suitName)
 			newSuit = append(newSuit, newCard)
 		} else if i == 12 {
-			var newCard card = NewCard("Queen of ", suitName)
+			var newCard Card = NewCard("Queen of ", suitName)
 			newSuit = append(newSuit, newCard)
 		} else if i == 13 {
-			var newCard card = NewCard("King of ", suitName)
+			var newCard Card = NewCard("King of ", suitName)
 			newSuit = append(newSuit, newCard)
 		} else {
-			var newCard card = NewCard(fmt.Sprint(i), suitName)
+			var newCard Card = NewCard(fmt.Sprint(i), suitName)
 			newSuit = append(newSuit, newCard)
 		}
 	}
 	return newSuit
 }
 
-func NewCard(value string, suit string) card {
-	return card{value, suit}
+func NewCard(value string, suit string) Card {
+	return Card{value, suit}
 }
 
-func DeckBuilder(suits []suit) deck {
-	newDeck := deck{}
+func DeckBuilder(suits []Suit) Deck {
+	newDeck := Deck{}
 	for _, s := range suits {
 		for _, c := range s {
 			newDeck = append(newDeck, c)
@@ -44,13 +43,14 @@ func DeckBuilder(suits []suit) deck {
 	return newDeck
 }
 
-func (deck deck) Printer() {
+func (deck Deck) Printer() {
 	for _, d := range deck {
-		fmt.Println(d)
+		fmt.Print(d)
+		fmt.Print(", ")
 	}
 }
 
-func (d deck) Shuffle() {
+func (d Deck) Shuffle() {
 	rand.Seed(time.Now().UnixNano())
 	for i := len(d) - 1; i > 0; i-- {
 		j := rand.Intn(i + 1)
