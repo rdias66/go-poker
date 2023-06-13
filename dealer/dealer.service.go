@@ -1,15 +1,7 @@
 package dealer
 
-func newRound(fullDeck deck.Deck, ps []player.Player){
+func NewRound(fullDeck deck.Deck, ps []player.Player){
 	return Round{FullDeck : fullDeck , Players : ps}
-}
-
-func  (Round) DrawCards(d deck.Deck, ps []player.Player){
-	for _, p := range ps {
-		p.Hand, d := DrawCards(d, 2)
-	}
-	r := newRound(d, ps)
-	return r
 }
 
 func (r Round) DealFlop(r Round) {
