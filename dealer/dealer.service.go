@@ -4,24 +4,36 @@ func NewRound(fullDeck deck.Deck, ps []player.Player){
 	return Round{FullDeck : fullDeck , Players : ps}
 }
 
+func (r Round) DealPlayersCards(){
+	for i:=0, i < len(r.Players), i++{
+		r.Players[i].Hand, r.FullDeck = DrawCards(r.FullDeck, 2) 
+	}
+}
+
 func (r Round) DealFlop(){
-	burn, deck := DrawCards(r.FullDeck, 1)
+	var burn Deck
+	var flop Deck
+	burn, r.FullDeck = DrawCards(r.FullDeck, 1)
 	r.Burns := append(r.Burns, burn)
-	flop, deck := DrawCards(r.FullDeck, 3)
+	flop,  r.FullDeck = DrawCards(r.FullDeck, 3)
 	r.Flop := append(r.Flop, flop)
 }
 
 func (r Round) DealTurn(){
-	burn, deck := DrawCards(r.FullDeck, 1)
+	var burn Deck
+	var turn Deck
+	burn, r.FullDeck = DrawCards(r.FullDeck, 1)
 	r.Burns := append(r.Burns, burn)
-	turn, deck := DrawCards(r.FullDeck, 1)
+	turn, r.FullDeck = DrawCards(r.FullDeck, 1)
 	r.Turn := append(r.Turn, turn)
 }
 
 func (r Round) DealRiver(){
-	burn, deck := DrawCards(r.FullDeck, 1)
+	var burn Deck
+	var river Deck
+	burn, r.FullDeck = DrawCards(r.FullDeck, 1)
 	r.Burns := append(r.Burns, burn)
-	river, deck := DrawCards(r.FullDeck, 1)
+	river, r.FullDeck = DrawCards(r.FullDeck, 1)
 	r.River := append(r.River, river)
 }
 
