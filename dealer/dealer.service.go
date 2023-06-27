@@ -3,7 +3,15 @@ package dealer
 import "go-poker/rules"
 
 func NewRound(fullDeck deck.Deck, ps []player.Player){
-	return Round{FullDeck : fullDeck , Players : ps}
+	return Round{
+	FullDeck : fullDeck , 
+	Players : ps, 
+	Burns:    nil,
+	Flop:    nil,
+	Turn:     nil,
+	River:    nil,
+	Table:    nil,
+	Winner:   nil,
 }
 
 func (r Round) DealPlayersCards(){
