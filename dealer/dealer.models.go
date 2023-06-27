@@ -12,6 +12,7 @@ type Round struct {
 	Flop        *[]deck.Card
 	Turn        *deck.Card
 	River       *deck.Card
+	Table 	    *[]deck.Card
 	Winner 	    *player.Player
 }
 
