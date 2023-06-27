@@ -2,6 +2,7 @@ package player
 
 type Player struct {
     Hand []deck.Card
+    FullHand []deck.Card
     Id string
     Name string
 }
