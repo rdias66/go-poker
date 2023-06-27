@@ -14,26 +14,26 @@ func RankChecker(h Deck) HandRank {
 	if isRoyalFlush(h){
 		return HandRank{Hand: h, ActiveRank: "Straight Flush"}
 	}
-	if isFourOfAKind(h){
+	else if isFourOfAKind(h){
 		return HandRank{Hand: h, ActiveRank: "Four of a Kind"}
 	}
-	if isFullHouse(h){
+	else if isFullHouse(h){
 		return HandRank{Hand: h, ActiveRank: "Full House"}
 	}
-	if isFlush(h){
+	else if isFlush(h){
 		return HandRank{Hand: h, ActiveRank: "Full House"}
 	}
-	if isStraight(h){
+	else if isStraight(h){
 		return HandRank{Hand: h, ActiveRank: "Full House"}
 	}
-	if isThreeOfAKind(h){
+	else if isThreeOfAKind(h){
 		return HandRank{Hand: h, ActiveRank: "Full House"}
 	}
 	OnePair, TwoPair : = isPair(h)
-	if TwoPair{
+	else if TwoPair{
 		return HandRank{Hand: h, ActiveRank: "Two Pair"}
 	}
-	if OnePair{
+	else if OnePair{
 		return HandRank{Hand: h, ActiveRank: "One Pair "}
 	}
 	else {
