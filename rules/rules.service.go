@@ -8,7 +8,7 @@ type HandRank struct { // MOVE TO RULES.MODELS.GO
 }
 
 func RankChecker(h Deck) HandRank {
-  if len(h) != 5 {
+  if len(h) != 7 { // 7 for now, to be fixed, remove 2 worst cards that dont affect the strongest hand
     return HandRank{Hand: h, ActiveRank: "Invalid hand size"}
   }
 	if isRoyalFlush(h){
