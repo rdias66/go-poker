@@ -32,13 +32,16 @@ func main() {
 
 	//GAMEFLOW
 	
-	//FIRST BETS
+	//FIRST BETS - hypothetical
+	//FLOP
 	round1.DealFlop()
 	
-	//POSTFLOP BETS
+	//POSTFLOP BETS - hypothetical
+	//TURN
 	round1.DealTurn()
 
-	//POSTTURN BETS
+	//POSTTURN BETS - hypothetical
+	//RIVER
 	round1.DealRiver()
 
 	//CHECK HANDS
