@@ -21,13 +21,13 @@ func RankChecker(h Deck) HandRank {
 		return HandRank{Hand: h, ActiveRank: "Full House"}
 	}
 	else if isFlush(h){
-		return HandRank{Hand: h, ActiveRank: "Full House"}
+		return HandRank{Hand: h, ActiveRank: "Flush"}
 	}
 	else if isStraight(h){
-		return HandRank{Hand: h, ActiveRank: "Full House"}
+		return HandRank{Hand: h, ActiveRank: "Straight"}
 	}
 	else if isThreeOfAKind(h){
-		return HandRank{Hand: h, ActiveRank: "Full House"}
+		return HandRank{Hand: h, ActiveRank: "Three of a Kind"}
 	}
 	OnePair, TwoPair : = isPair(h)
 	else if TwoPair{
