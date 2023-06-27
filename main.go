@@ -5,6 +5,7 @@ import (
 	"go-poker/player"
 	"go-poker/dealer"
 	"go-poker/rules"
+	"fmt"
 )
 
 func main() {
@@ -40,10 +41,12 @@ func main() {
 	//POSTTURN BETS
 	round1.DealRiver()
 
-	
+	//CHECK HANDS
+	round1.AppendPlayersHands()
+	round1.AssignFinalHands()
+	round1.CheckWinner()
 
-
-	
-	
+	//SHOW INFO ON ROUND
+	fmt.Printf(round1)
 
 }
