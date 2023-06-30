@@ -1,11 +1,8 @@
 package rules
 
-import "go-poker/deck"
-
-type HandRank struct { // MOVE TO RULES.MODELS.GO
-    Hand Deck
-    ActiveRank string
-}
+import (
+	"go-poker/deck"
+	)
 
 func RankChecker(h Deck) HandRank {
   if len(h) != 7 { // 7 for now, to be fixed, remove 2 worst cards that dont affect the strongest hand
