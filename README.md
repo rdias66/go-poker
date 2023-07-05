@@ -6,3 +6,5 @@ Deck building and card drawing is fully functional.
  General walkthourh of functionalities on main.go file's comments!
 
  For more info or suggestions please contact dias.a@live.com or set pull request.
+
+ Thanks for reading please test !
